@@ -7,8 +7,8 @@ and see your healthy weight range — all in a *mobile-friendly design*.
 ---
 
 ## 🔗 Live Demo
-👉 **[Try the BMI Calculator here](https://rajcode2006.github.io/bmi-calculator/)**
-
+👉 🔗 [Visit the Live Calculator](https://rajcode2006.github.io/bmi_calculator/)  
+_(Works smoothly on desktop and mobile browsers)_
 ---
 
 ## ✨ Features
