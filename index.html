@@ -242,7 +242,9 @@
     }
     .category-box {
       border-radius: 18px;
-      padding: 14px 18px;
+      padding: 14px 18px 14px 18px;
+      /* leave small room on the right for the check mark */
+      padding-right: 36px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -253,11 +255,14 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
     .category-box .label {
-      flex:1;
+      flex: 1 1 auto;
+      margin-right: 6px;
     }
     .category-box .range {
-      flex:1;
+      /* size to content so it hugs the numbers and doesn't get pushed under the check */
+      flex: 0 0 auto;
       text-align:right;
+      white-space:nowrap;
     }
     .category-box.underweight {
       background: #d4e9f9;
@@ -294,7 +299,7 @@
       content: "✓";
       position: absolute;
       top: 8px;
-      right: 12px;
+      right: 14px;
       background: #fff;
       color: var(--blue-dark);
       border-radius: 50%;
@@ -326,6 +331,28 @@
     @media (max-width: 500px){
       .result .value { font-size:2.3rem; }
     }
+    /* Footer styles (centered attribution) */
+    .site-footer {
+      border-top: 1px solid #eef5fb;
+      padding: 12px 1rem;
+      color: #556174;
+      background: transparent;
+      margin-top: 8px;
+      align-self: stretch;
+    }
+    .site-footer .footer-inner {
+      max-width: 480px;
+      margin: 0 auto;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      font-size:0.95rem;
+    }
+    .site-footer .attribution{ font-weight:600; color:#475066; }
+    .site-footer .heart{ color:#e24b4b; margin:0 6px; font-size:1.05rem; line-height:1; }
+    @media (max-width:480px){ .site-footer .footer-inner{ flex-direction:column; gap:6px; text-align:center; } }
     a { color: inherit; text-decoration: underline; }
   </style>
 </head>
@@ -500,9 +527,11 @@
       </div>
 
     </div>
-    <div style="padding:12px; font-size:0.75rem; text-align:center; color:#555;">
-      Built with plain HTML/CSS/JS. Built by <a href="https://github.com/rajcode2006">RajCode-xs1dd</a>.
-    </div>
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="attribution" aria-label="Attribution">Made with <span class="heart" aria-hidden="true">❤️</span> by <span>RajCode</span></div>
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -782,5 +811,6 @@
       });
     });
   </script>
+  
 </body>
 </html>
