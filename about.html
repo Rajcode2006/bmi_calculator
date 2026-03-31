@@ -1,575 +1,794 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About BMI – Complete Medical Guide | RajCode</title>
+    <title>About BMI – Complete Medical Guide | RajCode</title>
 
-<meta name="description" content="Detailed BMI guide including charts, risks, tables, formulas and health advice.">
-<meta name="theme-color" content="#0f3f72">
+    <meta name="description" content="Detailed BMI guide including charts, risks, tables, formulas and health advice.">
+    <meta name="theme-color" content="#0f3f72">
 
-<link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="./favicon.ico">
 
-<style>
-body{margin:0;font-family:system-ui;background:#f0f4fa;color:#1f2d3a;}
-.container{max-width:900px;margin:auto;padding:16px;}
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui;
+            background: #f0f4fa;
+            color: #1f2d3a;
+        }
 
-/* PREMIUM NAV */
-.nav-header{
-position:sticky;
-top:0;
-background:#0f3f72;
-color:white;
-display:flex;
-align-items:center;
-padding:12px;
-z-index:1000;
-}
-.menu-btn{font-size:20px;cursor:pointer;margin-right:10px;}
-.nav-title{font-weight:600;}
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 16px;
+        }
 
-.side-nav{
-position:fixed;
-top:0;
-left:-260px;
-width:240px;
-height:100%;
-background:white;
-box-shadow:2px 0 15px rgba(0,0,0,0.2);
-padding-top:60px;
-transition:0.3s;
-z-index:1001;
-overflow-y:auto;
-}
+        /* PREMIUM NAV */
+        .nav-header {
+            position: sticky;
+            top: 0;
+            background: #0f3f72;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            z-index: 1000;
+        }
 
-.side-nav a{
-display:block;
-padding:12px 16px;
-text-decoration:none;
-color:#0f3f72;
-border-bottom:1px solid #eee;
-}
+        .menu-btn {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
 
-.side-nav a.active{
-background:#0f3f72;
-color:white;
-}
+        .nav-title {
+            font-weight: 600;
+        }
 
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(3px);
-display:none;
-z-index:1000;
-}
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: -260px;
+            width: 240px;
+            height: 100%;
+            background: white;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+            padding-top: 60px;
+            transition: 0.3s;
+            z-index: 1001;
+            overflow-y: auto;
+        }
 
-/* YOUR EXISTING STYLES (UNCHANGED) */
-.card{background:#fff;padding:18px;margin-bottom:16px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.08);}
-h1{font-size:2rem;} h2{color:#0f3f72;}
-.table{width:100%;border-collapse:collapse;}
-.table th{background:#0f3f72;color:#fff;}
-.table th,.table td{padding:10px;border-bottom:1px solid #ddd;}
-img{width:100%;border-radius:12px;margin-top:10px;}
-.back-btn{display:inline-block;margin-bottom:10px;background:#0f3f72;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;}
+        .side-nav a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #0f3f72;
+            border-bottom: 1px solid #eee;
+        }
 
-.faq-item{border-bottom:1px solid #ddd;padding:10px 0;cursor:pointer;}
-.faq-q{font-weight:600;position:relative;display:flex;align-items:center;padding-right:28px;}
-.faq-q::after{content:"▼";position:absolute;right:6px;transition:0.25s transform ease;transform-origin:center;}
-.faq-item.active .faq-q::after{transform:rotate(180deg);}
-.faq-a{color:#555;margin-top:8px;line-height:1.5;max-height:0;overflow:hidden;transition:max-height .28s ease,padding .2s ease;margin-bottom:0;}
-.faq-item.active .faq-a{max-height:600px;padding-top:8px;margin-bottom:6px;}
+        .side-nav a.active {
+            background: #0f3f72;
+            color: white;
+        }
 
-footer{text-align:center;padding:20px;color:#666;font-size:0.85rem;}
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+            display: none;
+            z-index: 1000;
+        }
 
-html{scroll-behavior:smooth;}
-</style>
+        /* YOUR EXISTING STYLES (UNCHANGED) */
+        .card {
+            background: #fff;
+            padding: 18px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #0f3f72;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            background: #0f3f72;
+            color: #fff;
+        }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 10px;
+            background: #0f3f72;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-right: 28px;
+        }
+
+        .faq-q::after {
+            content: "▼";
+            position: absolute;
+            right: 6px;
+            transition: 0.25s transform ease;
+            transform-origin: center;
+        }
+
+        .faq-item.active .faq-q::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-a {
+            color: #555;
+            margin-top: 8px;
+            line-height: 1.5;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .28s ease, padding .2s ease;
+            margin-bottom: 0;
+        }
+
+        .faq-item.active .faq-a {
+            max-height: 600px;
+            padding-top: 8px;
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAV HEADER -->
-<div class="nav-header">
-<div class="menu-btn" onclick="openNav()">☰</div>
-<div class="nav-title">BMI Guide</div>
-</div>
-
-<!-- SIDE NAV -->
-<div class="side-nav" id="sideNav">
-<a href="#intro">Introduction</a>
-<a href="#adult">Adult BMI</a>
-<a href="#chart">Chart</a>
-<a href="#children">Children</a>
-<a href="#risk">Risks</a>
-<a href="#limit">Limitations</a>
-<a href="#formula">Formula</a>
-<a href="#prime">BMI Prime</a>
-<a href="#pi">Ponderal Index</a>
-<a href="#faq">FAQs</a>
-</div>
-
-<div class="overlay" id="overlay" onclick="closeNav()"></div>
-
-<div class="container">
-
-<h1>About Body Mass Index (BMI)</h1>
-
-<!-- INTRO -->
-<div class="card" id="intro">
-<h2>BMI Introduction</h2>
-<p>
-Body Mass Index (BMI) is a measurement used to evaluate a person’s body weight relative to their height. It provides a simple numeric value that helps categorize individuals into weight groups such as underweight, normal weight, overweight, and obese.
-</p>
-<p>
-BMI is widely used in healthcare because it offers a quick screening method to identify potential weight-related health risks. However, it does not directly measure body fat or distinguish between fat, muscle, and bone mass.
-</p>
-<p>
-Because of this limitation, BMI should not be used alone as a diagnostic tool but rather as part of a broader health assessment including lifestyle, diet, and medical evaluation.
-</p>
-</div>
-
-<!-- ADULT TABLE -->
-<div class="card" id="adult">
-<h2>BMI Table for Adults</h2>
-<p>The following classification is recommended by the World Health Organization (WHO). It helps determine where an individual falls within the BMI scale.</p>
-<table class="table">
-<tr><th>Classification</th><th>BMI Range (kg/m²)</th></tr>
-<tr><td>Severe Thinness</td><td>&lt; 16</td></tr>
-<tr><td>Moderate Thinness</td><td>16 – 17</td></tr>
-<tr><td>Mild Thinness</td><td>17 – 18.5</td></tr>
-<tr><td>Normal</td><td>18.5 – 25</td></tr>
-<tr><td>Overweight</td><td>25 – 30</td></tr>
-<tr><td>Obese Class I</td><td>30 – 35</td></tr>
-<tr><td>Obese Class II</td><td>35 – 40</td></tr>
-<tr><td>Obese Class III</td><td>&gt; 40</td></tr>
-</table>
-
-<p>
-These categories are used to evaluate potential health risks. Individuals outside the normal range may require lifestyle adjustments or medical consultation.
-</p>
-</div>
-
-<!-- CHART -->
-<div class="card" id="chart">
-<h2>BMI Chart for Adults</h2>
-<p>The BMI chart provides a visual representation of BMI categories across different height and weight combinations. Each colored region corresponds to a BMI classification.</p>
-
-<figure aria-label="BMI classification graph" style="margin:10px 0 0 0;">
-	<svg viewBox="0 0 700 420" width="100%" height="auto" role="img" xmlns="http://www.w3.org/2000/svg">
-		<title>BMI chart - weight vs height with BMI isolines</title>
-		<desc>Approximate BMI isolines (16, 18.5, 25, 30, 35) mapped over weight (kg) and height (m). This is an illustrative chart.</desc>
-		<rect x="0" y="0" width="700" height="420" fill="#fff" rx="14"/>
-		<!-- plotting area -->
-		<g transform="translate(60,40)">
-			<rect x="0" y="0" width="560" height="320" fill="#fbfdff" rx="10" stroke="#e6eef5"/>
-			<!-- grid lines -->
-			<g stroke="#eef6fb" stroke-width="1">
-				<!-- vertical weight grid -->
-				<!-- 6 vertical lines (for weights 40..140 every 20) -->
-				<line x1="0" y1="0" x2="0" y2="320" />
-				<line x1="112" y1="0" x2="112" y2="320" />
-				<line x1="224" y1="0" x2="224" y2="320" />
-				<line x1="336" y1="0" x2="336" y2="320" />
-				<line x1="448" y1="0" x2="448" y2="320" />
-				<line x1="560" y1="0" x2="560" y2="320" />
-				<!-- horizontal height grid (6 lines) -->
-				<line x1="0" y1="0" x2="560" y2="0" />
-				<line x1="0" y1="64" x2="560" y2="64" />
-				<line x1="0" y1="128" x2="560" y2="128" />
-				<line x1="0" y1="192" x2="560" y2="192" />
-				<line x1="0" y1="256" x2="560" y2="256" />
-				<line x1="0" y1="320" x2="560" y2="320" />
-			</g>
-
-			<!-- diagonal BMI isolines (computed from BMI = weight / height^2) -->
-			<g stroke-width="2" fill="none" stroke-dasharray="6 4">
-				<!-- BMI = 16 -->
-				<path d="M134.4 0 L116.704 32 L99.456 64 L82.656 96 L66.304 128 L50.4 160 L34.944 192 L19.936 224 L5.376 256" stroke="#6fb3d8" />
-				<!-- BMI = 18.5 -->
-				<path d="M190.4 0 L169.904 32 L150.0 64 L130.458 96 L111.664 128 L93.1875 160 L75.404 192 L57.902 224 L41.216 256 L24.871 288 L9.1 320" stroke="#3a8fb5" />
-				<!-- BMI = 25 -->
-				<path d="M336 0 L308.35 32 L281.4 64 L255.45 96 L229.6 128 L204.75 160 L180.6 192 L157.15 224 L134.4 256 L112.35 288 L91 320" stroke="#2f6f9a" />
-				<!-- BMI = 30 -->
-				<path d="M448 0 L414.82 32 L382.48 64 L351.18 96 L320.32 128 L290.8 160 L259.45 192 L230.734 224 L206.08 256 L180.418 288 L154 320" stroke="#1f4f78" />
-			</g>
-
-			<!-- labels for isolines -->
-			<g font-family="sans-serif" font-size="12" fill="#2b556f">
-				<text x="548" y="36">16</text>
-				<text x="548" y="86">18.5</text>
-				<text x="548" y="136">25</text>
-				<text x="548" y="186">30</text>
-			</g>
-
-			<!-- axis labels: weight (x) -->
-			<g font-family="sans-serif" font-size="12" fill="#203642" text-anchor="middle">
-				<text x="0" y="340">40</text>
-				<text x="112" y="340">60</text>
-				<text x="224" y="340">80</text>
-				<text x="336" y="340">100</text>
-				<text x="448" y="340">120</text>
-				<text x="560" y="340">140</text>
-				<text x="280" y="370" font-weight="700">Weight (kg)</text>
-			</g>
-
-			<!-- axis labels: height (y) -->
-			<g font-family="sans-serif" font-size="12" fill="#203642" text-anchor="end">
-				<text x="-8" y="0">2.00 m</text>
-				<text x="-8" y="64">1.90 m</text>
-				<text x="-8" y="128">1.80 m</text>
-				<text x="-8" y="192">1.70 m</text>
-				<text x="-8" y="256">1.60 m</text>
-				<text x="-8" y="320">1.50 m</text>
-				<text x="-40" y="170" transform="rotate(-90 -40,170)" font-weight="700">Height (m)</text>
-			</g>
-
-			<!-- legend -->
-			<g transform="translate(380,8)" font-family="sans-serif" font-size="12">
-				<rect x="0" y="0" width="170" height="60" rx="8" fill="#ffffffcc" stroke="#e6eef5" />
-				<text x="10" y="18" font-weight="700" fill="#203642">Legend</text>
-				<g transform="translate(10,26)" fill="#203642">
-					<text x="18" y="12">— BMI isolines (values shown at right)</text>
-				</g>
-			</g>
-		</g>
-	</svg>
-</figure>
-
-<p>
-By locating your height and weight on the chart, you can easily identify your BMI category and understand where you fall within the range.
-</p>
-</div>
-
-<!-- CHILDREN -->
-<div class="card" id="children">
-<h2>BMI for Children and Teens (Age 2–20)</h2>
-<p>
-For children and adolescents, BMI is interpreted differently using percentile-based growth charts. These charts take into account age and gender.
-</p>
-
-<ul>
-<li>Underweight: &lt; 5th percentile</li>
-<li>Healthy weight: 5th – 85th percentile</li>
-<li>Overweight: 85th – 95th percentile</li>
-<li>Obese: &gt; 95th percentile</li>
-</ul>
-
-<p>
-👉 <a href="https://www.cdc.gov/growthcharts" target="_blank">View official CDC growth charts</a>
-</p>
-
-<p>
-These percentiles help track growth patterns and identify potential health concerns during development.
-</p>
-</div>
-
-<!-- RISKS -->
-<div class="card" id="risk">
-<h2>Risks Associated with Being Overweight</h2>
-<p>
-Excess body weight increases the risk of several serious health conditions. These include:
-</p>
-
-<ul>
-<li>High blood pressure</li>
-<li>Elevated LDL cholesterol and triglycerides</li>
-<li>Type 2 diabetes</li>
-<li>Coronary heart disease</li>
-<li>Stroke</li>
-<li>Sleep apnea</li>
-<li>Joint disorders such as osteoarthritis</li>
-<li>Certain cancers</li>
-<li>Mental health issues including depression</li>
-</ul>
-
-<p>
-Maintaining a BMI within the normal range significantly reduces these risks.
-</p>
-</div>
-
-<div class="card">
-<h2>Risks Associated with Being Underweight</h2>
-<p>
-Being underweight can also pose health risks, including:
-</p>
-
-<ul>
-<li>Malnutrition and vitamin deficiencies</li>
-<li>Osteoporosis (weak bones)</li>
-<li>Anemia</li>
-<li>Decreased immune function</li>
-<li>Growth and development issues</li>
-<li>Fertility complications</li>
-</ul>
-
-<p>
-In some cases, being underweight may indicate an underlying medical condition that requires attention.
-</p>
-</div>
-
-<!-- LIMITATIONS -->
-<div class="card" id="limit">
-<h2>Limitations of BMI</h2>
-
-<h3>In Adults</h3>
-<p>
-BMI does not differentiate between fat and muscle mass. Athletes and muscular individuals may have a high BMI despite having low body fat.
-</p>
-
-<ul>
-<li>Does not measure body fat directly</li>
-<li>Varies with age and gender</li>
-<li>Muscular individuals may be misclassified</li>
-</ul>
-
-<h3>In Children and Adolescents</h3>
-<p>
-BMI interpretation in children is influenced by growth patterns and puberty stages.
-</p>
-
-<ul>
-<li>Requires percentile-based interpretation</li>
-<li>Less accurate during growth spurts</li>
-<li>Affected by hormonal changes</li>
-</ul>
-</div>
-
-<!-- FORMULA -->
-<div class="card" id="formula">
-<h2>BMI Formula</h2>
-<p><b>Metric:</b> BMI = weight (kg) / height² (m)</p>
-<p><b>US Units:</b> BMI = 703 × weight (lb) / height² (in)</p>
-</div>
-
-<!-- BMI PRIME -->
-<div class="card" id="prime">
-<h2>BMI Prime</h2>
-<p>
-BMI Prime is calculated by dividing BMI by 25 (upper limit of normal BMI).
-</p>
-
-<p><b>Formula:</b> BMI Prime = BMI / 25</p>
-
-<table class="table">
-<tr><th>Category</th><th>BMI Prime</th></tr>
-<tr><td>Underweight</td><td>&lt; 0.74</td></tr>
-<tr><td>Normal</td><td>0.74 – 1</td></tr>
-<tr><td>Overweight</td><td>1 – 1.2</td></tr>
-<tr><td>Obese</td><td>&gt; 1.2</td></tr>
-</table>
-
-<p>
-BMI Prime provides a normalized scale for easier comparison across individuals.
-</p>
-</div>
-
-<!-- PI -->
-<div class="card" id="pi">
-<h2>Ponderal Index</h2>
-<p>
-The Ponderal Index (PI) uses height cubed instead of squared, making it useful for individuals with unusual body proportions.
-</p>
-
-<p><b>Formula:</b> PI = weight / height³</p>
-
-<p>
-It is often considered more accurate for very tall or very short individuals compared to BMI.
-</p>
-</div>
-
-<!-- COMPARISON -->
-<div class="card">
-<h2>Comparison of BMI, BMI Prime, and Ponderal Index</h2>
-
-<table class="table">
-<tr><th>Metric</th><th>Formula</th><th>Use</th></tr>
-<tr><td>BMI</td><td>weight / height²</td><td>General screening</td></tr>
-<tr><td>BMI Prime</td><td>BMI / 25</td><td>Relative comparison</td></tr>
-<tr><td>Ponderal Index</td><td>weight / height³</td><td>Extreme body types</td></tr>
-</table>
-</div>
-
-<!-- HEALTH -->
-<div class="card">
-<h2>What You Can Do to Improve Your Health</h2>
-<ul>
-<li><a href="https://www.cdc.gov/healthyweight">Maintain a healthy weight</a></li>
-<li><a href="https://www.heart.org">Eat a heart-healthy diet</a></li>
-<li><a href="https://www.choosemyplate.gov">Prepare healthy meals</a></li>
-<li><a href="https://www.who.int">Increase physical activity</a></li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Understanding Your Health Data</h2>
-<ul>
-<li><a href="https://www.cdc.gov/bmi">Understanding overweight and obesity</a></li>
-<li><a href="https://www.nhlbi.nih.gov">Health measurements guide</a></li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Additional Help & Support</h2>
-<ul>
-<li><a href="https://www.nationaleatingdisorders.org">Eating disorder support</a></li>
-<li><a href="https://www.who.int">WHO resources</a></li>
-</ul>
-</div>
-
-
-<!-- FAQ UPGRADED -->
-<div class="card" id="faq">
-<h2>FAQs</h2>
-
-<div class="faq-item">
-	<div class="faq-q" role="button" tabindex="0" aria-expanded="false">What is BMI?</div>
-	<div class="faq-a">
-		BMI (Body Mass Index) is a simple calculation that compares weight to height to classify weight status. It is calculated as weight (kg) divided by height (m) squared.
-		<p>
-			BMI is a screening tool used by clinicians and public health organizations to identify potential weight-related health risks. It does not measure body fat directly and should be interpreted alongside other clinical information.
-		</p>
-	</div>
-</div>
-
-<div class="faq-item">
-	<div class="faq-q" role="button" tabindex="0" aria-expanded="false">How do I calculate BMI (examples)?</div>
-	<div class="faq-a">
-		Use the metric formula: <b>BMI = weight (kg) / height² (m)</b>. Example: weight = 70 kg, height = 1.75 m → BMI = 70 / (1.75×1.75) = 22.9.
-		<p>
-			In US units: <b>BMI = 703 × weight (lb) / height² (in)</b>. Example: 154 lb and 69 in → BMI ≈ 22.7.
-		</p>
-	</div>
-</div>
-
-<div class="faq-item">
-	<div class="faq-q" role="button" tabindex="0" aria-expanded="false">Is BMI accurate for athletes, older adults, or pregnant people?</div>
-	<div class="faq-a">
-		BMI can misclassify some individuals. Highly muscular people often have higher BMI despite low body fat, while older adults may have normal BMI but increased body fat.
-		<p>
-			During pregnancy BMI interpretation changes; discuss weight and health with a healthcare professional rather than relying on BMI alone.
-		</p>
-	</div>
-</div>
-
-<div class="faq-item">
-	<div class="faq-q" role="button" tabindex="0" aria-expanded="false">How is BMI used for children and teens?</div>
-	<div class="faq-a">
-		For ages 2–20, BMI is interpreted using age- and sex-specific percentiles (growth charts). These percentiles account for normal changes during growth and puberty.
-		<p>
-			The CDC growth charts are commonly used: underweight &lt;5th percentile, healthy 5th–85th, overweight 85th–95th, obese &gt;95th.
-		</p>
-	</div>
-</div>
-
-<div class="faq-item">
-	<div class="faq-q" role="button" tabindex="0" aria-expanded="false">What are alternatives to BMI?</div>
-	<div class="faq-a">
-		Alternatives and complements include waist circumference, waist-to-hip ratio, skinfold measurements, and body composition analysis (DEXA, bioelectrical impedance).
-		<p>
-			These methods can better estimate fat distribution and body fat percentage, important for assessing cardiometabolic risk.
-		</p>
-	</div>
-</div>
-
-<div class="faq-item">
-	<div class="faq-q" role="button" tabindex="0" aria-expanded="false">How can I safely change my BMI?</div>
-	<div class="faq-a">
-		Safe weight change focuses on sustainable diet, regular physical activity, and behaviour changes. Aim for gradual weight loss (e.g., 0.5–1 kg per week) and consult a healthcare provider for personalized guidance.
-		<p>
-			Small, consistent changes—balanced meals, portion control, increased daily movement—are more effective long-term than extreme diets.
-		</p>
-	</div>
-</div>
-
-<div class="faq-item">
-	<div class="faq-q" role="button" tabindex="0" aria-expanded="false">When should I see a healthcare professional?</div>
-	<div class="faq-a">
-		Consult a clinician if you have rapid unexplained weight change, BMI in the obese range with other risk factors (high blood pressure, diabetes), or concerns about growth in children.
-		<p>
-			A professional can assess overall health, order relevant tests, and recommend safe interventions.
-		</p>
-	</div>
-</div>
-
-</div>
-
-<!-- BUTTONS -->
-<div style="display:flex; gap:10px; margin:20px 0;">
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
-style="flex:1;padding:12px;border:none;border-radius:999px;background:#1f6fa3;color:white;">
-🔝 Go to Top
-</button>
-
-<button onclick="window.location.href='index.html'"
-style="flex:1;padding:12px;border:none;border-radius:999px;background:#0f3f72;color:white;">
-🔙 Back to Calculator
-</button>
-</div>
-
-</div>
-
-<footer>
-© 2025–2026 RajCode • All Rights Reserved
-</footer>
-
-<script>
-function openNav(){
-document.getElementById("sideNav").style.left="0";
-document.getElementById("overlay").style.display="block";
-}
-function closeNav(){
-document.getElementById("sideNav").style.left="-260px";
-document.getElementById("overlay").style.display="none";
-}
-
-const sections=document.querySelectorAll(".card[id]");
-const links=document.querySelectorAll(".side-nav a");
-
-window.addEventListener("scroll",()=>{
-let current="";
-sections.forEach(sec=>{
-if(pageYOffset>=sec.offsetTop-120){
-current=sec.id;
-}
-});
-links.forEach(a=>{
-a.classList.remove("active");
-if(a.getAttribute("href")==="#"+current){
-a.classList.add("active");
-}
-});
-});
-
-document.querySelectorAll('.faq-item').forEach(item => {
-	const header = item.querySelector('.faq-q');
-	const panel = item.querySelector('.faq-a');
-	// initialize aria
-	header.setAttribute('role', 'button');
-	header.setAttribute('aria-expanded', 'false');
-
-	function toggle() {
-		const expanded = item.classList.toggle('active');
-		header.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-		// allow CSS max-height transition to handle visibility
-	}
-
-	header.addEventListener('click', (e) => {
-		e.preventDefault();
-		toggle();
-	});
-
-	header.addEventListener('keydown', (e) => {
-		if (e.key === 'Enter' || e.key === ' ') {
-			e.preventDefault();
-			toggle();
-		}
-	});
-});
-</script>
+    <!-- NAV HEADER -->
+    <div class="nav-header">
+        <div class="menu-btn" onclick="openNav()">☰</div>
+        <div class="nav-title">BMI Guide</div>
+    </div>
+
+    <!-- SIDE NAV -->
+    <div class="side-nav" id="sideNav">
+        <a href="#intro">Introduction</a>
+        <a href="#adult">Adult BMI</a>
+        <a href="#chart">Chart</a>
+        <a href="#children">Children</a>
+        <a href="#risk">Risks</a>
+        <a href="#limit">Limitations</a>
+        <a href="#formula">Formula</a>
+        <a href="#prime">BMI Prime</a>
+        <a href="#pi">Ponderal Index</a>
+        <a href="#faq">FAQs</a>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+    <div class="container">
+
+        <h1>About Body Mass Index (BMI)</h1>
+
+        <!-- INTRO -->
+        <div class="card" id="intro">
+            <h2>BMI Introduction</h2>
+            <p>
+                Body Mass Index (BMI) is a measurement used to evaluate a person’s body weight relative to their height.
+                It provides a simple numeric value that helps categorize individuals into weight groups such as
+                underweight, normal weight, overweight, and obese.
+            </p>
+            <p>
+                BMI is widely used in healthcare because it offers a quick screening method to identify potential
+                weight-related health risks. However, it does not directly measure body fat or distinguish between fat,
+                muscle, and bone mass.
+            </p>
+            <p>
+                Because of this limitation, BMI should not be used alone as a diagnostic tool but rather as part of a
+                broader health assessment including lifestyle, diet, and medical evaluation.
+            </p>
+        </div>
+
+        <!-- ADULT TABLE -->
+        <div class="card" id="adult">
+            <h2>BMI Table for Adults</h2>
+            <p>The following classification is recommended by the World Health Organization (WHO). It helps determine
+                where an individual falls within the BMI scale.</p>
+            <table class="table">
+                <tr>
+                    <th>Classification</th>
+                    <th>BMI Range (kg/m²)</th>
+                </tr>
+                <tr>
+                    <td>Severe Thinness</td>
+                    <td>&lt; 16</td>
+                </tr>
+                <tr>
+                    <td>Moderate Thinness</td>
+                    <td>16 – 17</td>
+                </tr>
+                <tr>
+                    <td>Mild Thinness</td>
+                    <td>17 – 18.5</td>
+                </tr>
+                <tr>
+                    <td>Normal</td>
+                    <td>18.5 – 25</td>
+                </tr>
+                <tr>
+                    <td>Overweight</td>
+                    <td>25 – 30</td>
+                </tr>
+                <tr>
+                    <td>Obese Class I</td>
+                    <td>30 – 35</td>
+                </tr>
+                <tr>
+                    <td>Obese Class II</td>
+                    <td>35 – 40</td>
+                </tr>
+                <tr>
+                    <td>Obese Class III</td>
+                    <td>&gt; 40</td>
+                </tr>
+            </table>
+
+            <p>
+                These categories are used to evaluate potential health risks. Individuals outside the normal range may
+                require lifestyle adjustments or medical consultation.
+            </p>
+        </div>
+
+        <!-- CHART -->
+        <div class="card" id="chart">
+            <h2>BMI Chart for Adults</h2>
+            <p>The BMI chart provides a visual representation of BMI categories across different height and weight
+                combinations. Each colored region corresponds to a BMI classification.</p>
+
+            <figure aria-label="BMI classification graph" style="margin:10px 0 0 0;">
+                <svg viewBox="0 0 700 420" width="100%" height="auto" role="img" xmlns="http://www.w3.org/2000/svg">
+                    <title>BMI chart - weight vs height with BMI isolines</title>
+                    <desc>Approximate BMI isolines (16, 18.5, 25, 30, 35) mapped over weight (kg) and height (m). This
+                        is an illustrative chart.</desc>
+                    <rect x="0" y="0" width="700" height="420" fill="#fff" rx="14" />
+                    <!-- plotting area -->
+                    <g transform="translate(60,40)">
+                        <rect x="0" y="0" width="560" height="320" fill="#fbfdff" rx="10" stroke="#e6eef5" />
+                        <!-- grid lines -->
+                        <g stroke="#eef6fb" stroke-width="1">
+                            <!-- vertical weight grid -->
+                            <!-- 6 vertical lines (for weights 40..140 every 20) -->
+                            <line x1="0" y1="0" x2="0" y2="320" />
+                            <line x1="112" y1="0" x2="112" y2="320" />
+                            <line x1="224" y1="0" x2="224" y2="320" />
+                            <line x1="336" y1="0" x2="336" y2="320" />
+                            <line x1="448" y1="0" x2="448" y2="320" />
+                            <line x1="560" y1="0" x2="560" y2="320" />
+                            <!-- horizontal height grid (6 lines) -->
+                            <line x1="0" y1="0" x2="560" y2="0" />
+                            <line x1="0" y1="64" x2="560" y2="64" />
+                            <line x1="0" y1="128" x2="560" y2="128" />
+                            <line x1="0" y1="192" x2="560" y2="192" />
+                            <line x1="0" y1="256" x2="560" y2="256" />
+                            <line x1="0" y1="320" x2="560" y2="320" />
+                        </g>
+
+                        <!-- diagonal BMI isolines (computed from BMI = weight / height^2) -->
+                        <g stroke-width="2" fill="none" stroke-dasharray="6 4">
+                            <!-- BMI = 16 -->
+                            <path
+                                d="M134.4 0 L116.704 32 L99.456 64 L82.656 96 L66.304 128 L50.4 160 L34.944 192 L19.936 224 L5.376 256"
+                                stroke="#6fb3d8" />
+                            <!-- BMI = 18.5 -->
+                            <path
+                                d="M190.4 0 L169.904 32 L150.0 64 L130.458 96 L111.664 128 L93.1875 160 L75.404 192 L57.902 224 L41.216 256 L24.871 288 L9.1 320"
+                                stroke="#3a8fb5" />
+                            <!-- BMI = 25 -->
+                            <path
+                                d="M336 0 L308.35 32 L281.4 64 L255.45 96 L229.6 128 L204.75 160 L180.6 192 L157.15 224 L134.4 256 L112.35 288 L91 320"
+                                stroke="#2f6f9a" />
+                            <!-- BMI = 30 -->
+                            <path
+                                d="M448 0 L414.82 32 L382.48 64 L351.18 96 L320.32 128 L290.8 160 L259.45 192 L230.734 224 L206.08 256 L180.418 288 L154 320"
+                                stroke="#1f4f78" />
+                        </g>
+
+                        <!-- labels for isolines -->
+                        <g font-family="sans-serif" font-size="12" fill="#2b556f">
+                            <text x="548" y="36">16</text>
+                            <text x="548" y="86">18.5</text>
+                            <text x="548" y="136">25</text>
+                            <text x="548" y="186">30</text>
+                        </g>
+
+                        <!-- axis labels: weight (x) -->
+                        <g font-family="sans-serif" font-size="12" fill="#203642" text-anchor="middle">
+                            <text x="0" y="340">40</text>
+                            <text x="112" y="340">60</text>
+                            <text x="224" y="340">80</text>
+                            <text x="336" y="340">100</text>
+                            <text x="448" y="340">120</text>
+                            <text x="560" y="340">140</text>
+                            <text x="280" y="370" font-weight="700">Weight (kg)</text>
+                        </g>
+
+                        <!-- axis labels: height (y) -->
+                        <g font-family="sans-serif" font-size="12" fill="#203642" text-anchor="end">
+                            <text x="-8" y="0">2.00 m</text>
+                            <text x="-8" y="64">1.90 m</text>
+                            <text x="-8" y="128">1.80 m</text>
+                            <text x="-8" y="192">1.70 m</text>
+                            <text x="-8" y="256">1.60 m</text>
+                            <text x="-8" y="320">1.50 m</text>
+                            <text x="-40" y="170" transform="rotate(-90 -40,170)" font-weight="700">Height (m)</text>
+                        </g>
+
+                        <!-- legend -->
+                        <g transform="translate(380,8)" font-family="sans-serif" font-size="12">
+                            <rect x="0" y="0" width="170" height="60" rx="8" fill="#ffffffcc" stroke="#e6eef5" />
+                            <text x="10" y="18" font-weight="700" fill="#203642">Legend</text>
+                            <g transform="translate(10,26)" fill="#203642">
+                                <text x="18" y="12">— BMI isolines (values shown at right)</text>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </figure>
+
+            <p>
+                By locating your height and weight on the chart, you can easily identify your BMI category and
+                understand where you fall within the range.
+            </p>
+        </div>
+
+        <!-- CHILDREN -->
+        <div class="card" id="children">
+            <h2>BMI for Children and Teens (Age 2–20)</h2>
+            <p>
+                For children and adolescents, BMI is interpreted differently using percentile-based growth charts. These
+                charts take into account age and gender.
+            </p>
+
+            <ul>
+                <li>Underweight: &lt; 5th percentile</li>
+                <li>Healthy weight: 5th – 85th percentile</li>
+                <li>Overweight: 85th – 95th percentile</li>
+                <li>Obese: &gt; 95th percentile</li>
+            </ul>
+
+            <p>
+                👉 <a href="https://www.cdc.gov/growthcharts" target="_blank">View official CDC growth charts</a>
+            </p>
+
+            <p>
+                These percentiles help track growth patterns and identify potential health concerns during development.
+            </p>
+        </div>
+
+        <!-- RISKS -->
+        <div class="card" id="risk">
+            <h2>Risks Associated with Being Overweight</h2>
+            <p>
+                Excess body weight increases the risk of several serious health conditions. These include:
+            </p>
+
+            <ul>
+                <li>High blood pressure</li>
+                <li>Elevated LDL cholesterol and triglycerides</li>
+                <li>Type 2 diabetes</li>
+                <li>Coronary heart disease</li>
+                <li>Stroke</li>
+                <li>Sleep apnea</li>
+                <li>Joint disorders such as osteoarthritis</li>
+                <li>Certain cancers</li>
+                <li>Mental health issues including depression</li>
+            </ul>
+
+            <p>
+                Maintaining a BMI within the normal range significantly reduces these risks.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Risks Associated with Being Underweight</h2>
+            <p>
+                Being underweight can also pose health risks, including:
+            </p>
+
+            <ul>
+                <li>Malnutrition and vitamin deficiencies</li>
+                <li>Osteoporosis (weak bones)</li>
+                <li>Anemia</li>
+                <li>Decreased immune function</li>
+                <li>Growth and development issues</li>
+                <li>Fertility complications</li>
+            </ul>
+
+            <p>
+                In some cases, being underweight may indicate an underlying medical condition that requires attention.
+            </p>
+        </div>
+
+        <!-- LIMITATIONS -->
+        <div class="card" id="limit">
+            <h2>Limitations of BMI</h2>
+
+            <h3>In Adults</h3>
+            <p>
+                BMI does not differentiate between fat and muscle mass. Athletes and muscular individuals may have a
+                high BMI despite having low body fat.
+            </p>
+
+            <ul>
+                <li>Does not measure body fat directly</li>
+                <li>Varies with age and gender</li>
+                <li>Muscular individuals may be misclassified</li>
+            </ul>
+
+            <h3>In Children and Adolescents</h3>
+            <p>
+                BMI interpretation in children is influenced by growth patterns and puberty stages.
+            </p>
+
+            <ul>
+                <li>Requires percentile-based interpretation</li>
+                <li>Less accurate during growth spurts</li>
+                <li>Affected by hormonal changes</li>
+            </ul>
+        </div>
+
+        <!-- FORMULA -->
+        <div class="card" id="formula">
+            <h2>BMI Formula</h2>
+            <p><b>Metric:</b> BMI = weight (kg) / height² (m)</p>
+            <p><b>US Units:</b> BMI = 703 × weight (lb) / height² (in)</p>
+        </div>
+
+        <!-- BMI PRIME -->
+        <div class="card" id="prime">
+            <h2>BMI Prime</h2>
+            <p>
+                BMI Prime is calculated by dividing BMI by 25 (upper limit of normal BMI).
+            </p>
+
+            <p><b>Formula:</b> BMI Prime = BMI / 25</p>
+
+            <table class="table">
+                <tr>
+                    <th>Category</th>
+                    <th>BMI Prime</th>
+                </tr>
+                <tr>
+                    <td>Underweight</td>
+                    <td>&lt; 0.74</td>
+                </tr>
+                <tr>
+                    <td>Normal</td>
+                    <td>0.74 – 1</td>
+                </tr>
+                <tr>
+                    <td>Overweight</td>
+                    <td>1 – 1.2</td>
+                </tr>
+                <tr>
+                    <td>Obese</td>
+                    <td>&gt; 1.2</td>
+                </tr>
+            </table>
+
+            <p>
+                BMI Prime provides a normalized scale for easier comparison across individuals.
+            </p>
+        </div>
+
+        <!-- PI -->
+        <div class="card" id="pi">
+            <h2>Ponderal Index</h2>
+            <p>
+                The Ponderal Index (PI) uses height cubed instead of squared, making it useful for individuals with
+                unusual body proportions.
+            </p>
+
+            <p><b>Formula:</b> PI = weight / height³</p>
+
+            <p>
+                It is often considered more accurate for very tall or very short individuals compared to BMI.
+            </p>
+        </div>
+
+        <!-- COMPARISON -->
+        <div class="card">
+            <h2>Comparison of BMI, BMI Prime, and Ponderal Index</h2>
+
+            <table class="table">
+                <tr>
+                    <th>Metric</th>
+                    <th>Formula</th>
+                    <th>Use</th>
+                </tr>
+                <tr>
+                    <td>BMI</td>
+                    <td>weight / height²</td>
+                    <td>General screening</td>
+                </tr>
+                <tr>
+                    <td>BMI Prime</td>
+                    <td>BMI / 25</td>
+                    <td>Relative comparison</td>
+                </tr>
+                <tr>
+                    <td>Ponderal Index</td>
+                    <td>weight / height³</td>
+                    <td>Extreme body types</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- HEALTH -->
+        <div class="card">
+            <h2>What You Can Do to Improve Your Health</h2>
+            <ul>
+                <li><a href="https://www.cdc.gov/healthyweight">Maintain a healthy weight</a></li>
+                <li><a href="https://www.heart.org">Eat a heart-healthy diet</a></li>
+                <li><a href="https://www.choosemyplate.gov">Prepare healthy meals</a></li>
+                <li><a href="https://www.who.int">Increase physical activity</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Understanding Your Health Data</h2>
+            <ul>
+                <li><a href="https://www.cdc.gov/bmi">Understanding overweight and obesity</a></li>
+                <li><a href="https://www.nhlbi.nih.gov">Health measurements guide</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Additional Help & Support</h2>
+            <ul>
+                <li><a href="https://www.nationaleatingdisorders.org">Eating disorder support</a></li>
+                <li><a href="https://www.who.int">WHO resources</a></li>
+            </ul>
+        </div>
+
+
+        <!-- FAQ UPGRADED -->
+        <div class="card" id="faq">
+            <h2>FAQs</h2>
+
+            <div class="faq-item">
+                <div class="faq-q" role="button" tabindex="0" aria-expanded="false">What is BMI?</div>
+                <div class="faq-a">
+                    BMI (Body Mass Index) is a simple calculation that compares weight to height to classify weight
+                    status. It is calculated as weight (kg) divided by height (m) squared.
+                    <p>
+                        BMI is a screening tool used by clinicians and public health organizations to identify potential
+                        weight-related health risks. It does not measure body fat directly and should be interpreted
+                        alongside other clinical information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" role="button" tabindex="0" aria-expanded="false">How do I calculate BMI (examples)?
+                </div>
+                <div class="faq-a">
+                    Use the metric formula: <b>BMI = weight (kg) / height² (m)</b>. Example: weight = 70 kg, height =
+                    1.75 m → BMI = 70 / (1.75×1.75) = 22.9.
+                    <p>
+                        In US units: <b>BMI = 703 × weight (lb) / height² (in)</b>. Example: 154 lb and 69 in → BMI ≈
+                        22.7.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Is BMI accurate for athletes, older
+                    adults, or pregnant people?</div>
+                <div class="faq-a">
+                    BMI can misclassify some individuals. Highly muscular people often have higher BMI despite low body
+                    fat, while older adults may have normal BMI but increased body fat.
+                    <p>
+                        During pregnancy BMI interpretation changes; discuss weight and health with a healthcare
+                        professional rather than relying on BMI alone.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" role="button" tabindex="0" aria-expanded="false">How is BMI used for children and
+                    teens?</div>
+                <div class="faq-a">
+                    For ages 2–20, BMI is interpreted using age- and sex-specific percentiles (growth charts). These
+                    percentiles account for normal changes during growth and puberty.
+                    <p>
+                        The CDC growth charts are commonly used: underweight &lt;5th percentile, healthy 5th–85th,
+                        overweight 85th–95th, obese &gt;95th.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" role="button" tabindex="0" aria-expanded="false">What are alternatives to BMI?</div>
+                <div class="faq-a">
+                    Alternatives and complements include waist circumference, waist-to-hip ratio, skinfold measurements,
+                    and body composition analysis (DEXA, bioelectrical impedance).
+                    <p>
+                        These methods can better estimate fat distribution and body fat percentage, important for
+                        assessing cardiometabolic risk.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" role="button" tabindex="0" aria-expanded="false">How can I safely change my BMI?
+                </div>
+                <div class="faq-a">
+                    Safe weight change focuses on sustainable diet, regular physical activity, and behaviour changes.
+                    Aim for gradual weight loss (e.g., 0.5–1 kg per week) and consult a healthcare provider for
+                    personalized guidance.
+                    <p>
+                        Small, consistent changes—balanced meals, portion control, increased daily movement—are more
+                        effective long-term than extreme diets.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" role="button" tabindex="0" aria-expanded="false">When should I see a healthcare
+                    professional?</div>
+                <div class="faq-a">
+                    Consult a clinician if you have rapid unexplained weight change, BMI in the obese range with other
+                    risk factors (high blood pressure, diabetes), or concerns about growth in children.
+                    <p>
+                        A professional can assess overall health, order relevant tests, and recommend safe
+                        interventions.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div style="display:flex; gap:10px; margin:20px 0;">
+            <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                style="flex:1;padding:12px;border:none;border-radius:999px;background:#1f6fa3;color:white;">
+                🔝 Go to Top
+            </button>
+
+            <button onclick="window.location.href='index.html'"
+                style="flex:1;padding:12px;border:none;border-radius:999px;background:#0f3f72;color:white;">
+                🔙 Back to Calculator
+            </button>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2025–2026 RajCode • All Rights Reserved
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("sideNav").style.left = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+        function closeNav() {
+            document.getElementById("sideNav").style.left = "-260px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        /* AUTO CLOSE + SMOOTH SCROLL */
+        document.querySelectorAll('.side-nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // CLOSE NAV AFTER CLICK
+                closeNav();
+            });
+        });
+
+        const sections = document.querySelectorAll(".card[id]");
+        const links = document.querySelectorAll(".side-nav a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(sec => {
+                if (pageYOffset >= sec.offsetTop - 120) {
+                    current = sec.id;
+                }
+            });
+            links.forEach(a => {
+                a.classList.remove("active");
+                if (a.getAttribute("href") === "#" + current) {
+                    a.classList.add("active");
+                }
+            });
+        });
+
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const header = item.querySelector('.faq-q');
+            const panel = item.querySelector('.faq-a');
+            // initialize aria
+            header.setAttribute('role', 'button');
+            header.setAttribute('aria-expanded', 'false');
+
+            function toggle() {
+                const expanded = item.classList.toggle('active');
+                header.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                // allow CSS max-height transition to handle visibility
+            }
+
+            header.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggle();
+            });
+
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle();
+                }
+            });
+        });
+    </script>
 
 </body>
+
 </html>
