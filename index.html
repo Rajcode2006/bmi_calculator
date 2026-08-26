@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>BMI Calculator – Calculate Your Body Mass Index Online</title>
@@ -12,9 +12,6 @@
   <meta name="keywords"
     content="bmi calculator, body mass index, health calculator, weight calculator, fitness tool, rajcode">
   <meta name="author" content="RajCode-xs1dd">
-
-  <!-- Theme Color (Mobile browser UI) -->
-  <meta name="theme-color" content="#0f3f72">
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:title" content="BMI Calculator">
@@ -55,6 +52,7 @@
       font-family: system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
     }
     * { box-sizing:border-box; }
+    .is-hidden { display: none !important; }
     body {
       margin:0;
       padding:0;
@@ -166,6 +164,7 @@
       text-align:center;
       background:#fff;
       transition: all .15s;
+      -webkit-user-select:none;
       user-select:none;
     }
     .toggle-btn.active {
@@ -386,10 +385,29 @@
       flex-wrap:wrap;
       font-size:0.95rem;
     }
+
+    .site-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: var(--gold-light);
+}
+
+.learn-more-link {
+  color: var(--blue-dark);
+  font-weight: 600;
+  margin-left: 6px;
+}
     .site-footer .attribution{ font-weight:600; color:#475066; }
     .site-footer .heart{ color:#e24b4b; margin:0 6px; font-size:1.05rem; line-height:1; }
     @media (max-width:480px){ .site-footer .footer-inner{ flex-direction:column; gap:6px; text-align:center; } }
   </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="container" aria-label="BMI Calculator">
@@ -398,7 +416,7 @@
     </div>
     <div class="sub">
       Body mass index (BMI) is a measure of body fat based on height and weight that applies to adults. It doesn't directly measure body fat, but it can be a useful screening tool to identify possible weight problems for adults. Enter your height and weight to calculate your BMI and see which category you fall into.
-      <a href="./about.html" style="color:var(--blue-dark); font-weight:600; margin-left:6px;">Learn more about BMI</a>
+      <a href="./about.html" class="learn-more-link">Learn more about BMI</a>
     </div>
     <div class="card">
       <div class="tabs" role="tablist">
@@ -415,16 +433,16 @@
               <div class="toggle-btn" data-hunit="ftin" role="radio" aria-checked="false">Feet & Inches</div>
             </div>
             <div id="height-cm-wrapper">
-              <div style="display:flex; gap:6px; align-items:center;">
+              <div class="input-with-unit">
                 <input type="number" id="height-cm" placeholder="Centimeters" min="0" aria-label="Height in centimeters" />
-                <span style="align-self:flex-end; font-size:0.9rem;">cm</span>
+                <span class="input-unit">cm</span>
               </div>
             </div>
-            <div id="height-ftin-wrapper" style="display:none;">
+            <div id="height-ftin-wrapper" class="is-hidden">
               <div class="row">
-                <div class="field" style="flex:0 0 48%;">
-                  <div style="display:flex; gap:6px;">
-                    <div style="flex:1;">
+                <div class="field field-half">
+                  <div class="input-row">
+                    <div class="input-column">
                       <select id="height-feet-metric" aria-label="Feet">
                         <option value="0">Feet</option>
                         <option value="4">4</option>
@@ -433,7 +451,7 @@
                         <option value="7">7</option>
                       </select>
                     </div>
-                    <div style="flex:1;">
+                    <div class="input-column">
                       <select id="height-inches-metric" aria-label="Inches">
                         <option value="0">Inches</option>
                         <option value="0">0</option>
@@ -454,24 +472,24 @@
                 </div>
               </div>
             </div>
-            <div class="error" id="height-error" style="display:none;">Please provide valid height.</div>
+            <div class="error is-hidden" id="height-error">Please provide valid height.</div>
           </div>
           <div class="field">
             <label for="weight-kg">Weight</label>
-            <div style="display:flex; gap:6px; align-items:center;">
+            <div class="input-with-unit">
               <input type="number" id="weight-kg" placeholder="Kilograms" min="0" step="0.1" aria-label="Weight in kilograms" />
-              <span style="align-self:flex-end; font-size:0.9rem;">kg</span>
+              <span class="input-unit">kg</span>
             </div>
-            <div class="error" id="weight-error" style="display:none;">Please provide valid weight.</div>
+            <div class="error is-hidden" id="weight-error">Please provide valid weight.</div>
           </div>
         </div>
 
         <!-- STANDARD -->
-        <div id="standard-inputs" style="display:none;">
+        <div id="standard-inputs" class="is-hidden">
           <div class="field">
             <label>Height</label>
-            <div style="display:flex; gap:6px;">
-              <div style="flex:1;">
+            <div class="input-row">
+              <div class="input-column">
                 <select id="height-feet" aria-label="Feet">
                   <option value="0">Feet</option>
                   <option value="4">4</option>
@@ -480,7 +498,7 @@
                   <option value="7">7</option>
                 </select>
               </div>
-              <div style="flex:1;">
+              <div class="input-column">
                 <select id="height-inches" aria-label="Inches">
                   <option value="0">Inches</option>
                   <option value="0">0</option>
@@ -498,7 +516,7 @@
                 </select>
               </div>
             </div>
-            <div class="error" id="std-height-error" style="display:none;">Please provide valid height.</div>
+            <div class="error is-hidden" id="std-height-error">Please provide valid height.</div>
           </div>
           <div class="field">
             <label>Weight</label>
@@ -507,18 +525,18 @@
               <div class="toggle-btn" data-wunit="kg" role="radio" aria-checked="false">Kilograms</div>
             </div>
             <div id="weight-lbs-wrapper">
-              <div style="display:flex; gap:6px; align-items:center;">
+              <div class="input-with-unit">
                 <input type="number" id="weight-lbs" placeholder="Pounds" min="0" step="0.1" aria-label="Weight in pounds" />
-                <span style="align-self:flex-end; font-size:0.9rem;">lbs</span>
+                <span class="input-unit">lbs</span>
               </div>
             </div>
-            <div id="weight-kg-std-wrapper" style="display:none;">
-              <div style="display:flex; gap:6px; align-items:center;">
+            <div id="weight-kg-std-wrapper" class="is-hidden">
+              <div class="input-with-unit">
                 <input type="number" id="weight-kg-std" placeholder="Kilograms" min="0" step="0.1" aria-label="Weight in kilograms (standard)" />
-                <span style="align-self:flex-end; font-size:0.9rem;">kg</span>
+                <span class="input-unit">kg</span>
               </div>
             </div>
-            <div class="error" id="std-weight-error" style="display:none;">Please provide valid weight.</div>
+            <div class="error is-hidden" id="std-weight-error">Please provide valid weight.</div>
           </div>
         </div>
       </div>
@@ -528,19 +546,19 @@
         <button class="btn reset" id="reset-btn">Reset</button>
       </div>
 
-      <div id="output" style="display:none;">
+      <div id="output" class="is-hidden">
         <div class="result" aria-live="polite">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+          <div class="result-header">
             <div>
-              <div style="font-size:0.75rem; letter-spacing:1px; text-transform:uppercase;">Your BMI is</div>
+              <div class="result-label">Your BMI is</div>
               <div class="value" id="bmi-value">0.0</div>
             </div>
-            <div id="badge" class="badge" style="background:#fff; color:#0f3f72;">Category</div>
+            <div id="badge" class="badge badge-default">Category</div>
           </div>
           <div class="target" id="target-info"></div>
         </div>
-        <div style="margin-top:10px;">
-          <div style="font-weight:600; margin-bottom:6px;">BMI Categories</div>
+        <div class="categories-section">
+          <div class="categories-title">BMI Categories</div>
           <div class="category">
             <div class="category-box underweight" data-cat="Underweight">
               <div class="label">Underweight</div>
@@ -565,7 +583,7 @@
     </div>
     <footer class="site-footer" role="contentinfo">
       <div class="footer-inner">
-        <div class="attribution" aria-label="Attribution">Made with <span class="heart" aria-hidden="true">❤️</span> by <span>RajCode</span></div>
+        <div class="attribution" aria-label="Attribution">Made with <span class="heart" aria-hidden="true">❤️</span> by <a href="https://rajcode-portfolio.app/">RajCode</a></div>
       </div>
     </footer>
   </div>
@@ -608,23 +626,31 @@
     let currentHeightUnitMetric = 'cm';
     let currentWeightUnitStandard = 'lbs';
 
+    function show(element){
+      element.classList.remove('is-hidden');
+    }
+
+    function hide(element){
+      element.classList.add('is-hidden');
+    }
+
     function setMode(mode){
       if(mode === 'metric'){
         metricTab.classList.add('active');
         standardTab.classList.remove('active');
         metricTab.setAttribute('aria-selected','true');
         standardTab.setAttribute('aria-selected','false');
-        document.getElementById('metric-inputs').style.display = '';
-        document.getElementById('standard-inputs').style.display = 'none';
+        show(document.getElementById('metric-inputs'));
+        hide(document.getElementById('standard-inputs'));
       } else {
         standardTab.classList.add('active');
         metricTab.classList.remove('active');
         standardTab.setAttribute('aria-selected','true');
         metricTab.setAttribute('aria-selected','false');
-        document.getElementById('metric-inputs').style.display = 'none';
-        document.getElementById('standard-inputs').style.display = '';
+        hide(document.getElementById('metric-inputs'));
+        show(document.getElementById('standard-inputs'));
       }
-      output.style.display = 'none';
+      hide(output);
       clearErrors();
       clearCategoryHighlight();
     }
@@ -643,13 +669,13 @@
         const unit = btn.getAttribute('data-hunit');
         currentHeightUnitMetric = unit;
         if(unit === 'cm'){
-          heightCmWrapper.style.display = '';
-          heightFtInWrapper.style.display = 'none';
+          show(heightCmWrapper);
+          hide(heightFtInWrapper);
         } else {
-          heightCmWrapper.style.display = 'none';
-          heightFtInWrapper.style.display = '';
+          hide(heightCmWrapper);
+          show(heightFtInWrapper);
         }
-        output.style.display = 'none';
+        hide(output);
         clearErrors();
         clearCategoryHighlight();
       });
@@ -666,20 +692,20 @@
         const unit = btn.getAttribute('data-wunit');
         currentWeightUnitStandard = unit;
         if(unit === 'lbs'){
-          document.getElementById('weight-lbs-wrapper').style.display = '';
-          document.getElementById('weight-kg-std-wrapper').style.display = 'none';
+          show(document.getElementById('weight-lbs-wrapper'));
+          hide(document.getElementById('weight-kg-std-wrapper'));
         } else {
-          document.getElementById('weight-lbs-wrapper').style.display = 'none';
-          document.getElementById('weight-kg-std-wrapper').style.display = '';
+          hide(document.getElementById('weight-lbs-wrapper'));
+          show(document.getElementById('weight-kg-std-wrapper'));
         }
-        output.style.display = 'none';
+        hide(output);
         clearErrors();
         clearCategoryHighlight();
       });
     });
 
     function clearErrors(){
-      [heightError, weightError, stdHeightError, stdWeightError].forEach(e => e.style.display = 'none');
+      [heightError, weightError, stdHeightError, stdWeightError].forEach(hide);
     }
 
     function clearCategoryHighlight(){
@@ -721,11 +747,11 @@
         const wKg = parseFloat(weightKgInput.value);
         let ok = true;
         if(!hCm){
-          heightError.style.display = 'block';
+          show(heightError);
           ok = false;
         }
         if(isNaN(wKg) || wKg <= 0){
-          weightError.style.display = 'block';
+          show(weightError);
           ok = false;
         }
         if(!ok) return;
@@ -738,13 +764,13 @@
         let pounds = null;
         let ok = true;
         if(feet === 0 && inches === 0){
-          stdHeightError.style.display = 'block';
+          show(stdHeightError);
           ok = false;
         }
         if(currentWeightUnitStandard === 'lbs'){
           const p = parseFloat(weightLbsInput.value);
           if(isNaN(p) || p <= 0){
-            stdWeightError.style.display = 'block';
+            show(stdWeightError);
             ok = false;
           } else {
             pounds = p;
@@ -752,7 +778,7 @@
         } else {
           const wg = parseFloat(weightKgStdInput.value);
           if(isNaN(wg) || wg <= 0){
-            stdWeightError.style.display = 'block';
+            show(stdWeightError);
             ok = false;
           } else {
             weightKg = wg;
@@ -761,7 +787,7 @@
         if(!ok) return;
         const totalInches = feet * 12 + inches;
         if(totalInches === 0){
-          stdHeightError.style.display = 'block';
+          show(stdHeightError);
           return;
         }
         heightMeters = (totalInches * 2.54) / 100;
@@ -774,7 +800,7 @@
       if(bmi === null || !isFinite(bmi)) return;
       const rounded = Math.round(bmi * 10) / 10;
       bmiValueEl.textContent = rounded.toFixed(1);
-      output.style.display = 'block';
+      show(output);
 
       let category = '';
       if (rounded < 18.5){
@@ -827,7 +853,7 @@
       standardInches.value = '0';
       weightLbsInput.value = '';
       weightKgStdInput.value = '';
-      output.style.display = 'none';
+      hide(output);
       clearErrors();
       clearCategoryHighlight();
     });
@@ -846,6 +872,8 @@
         if(e.key === 'Enter') calculateBMI();
       });
     });
+
+    setMode('metric');
 
     
   </script>
