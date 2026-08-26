@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ur-bmi-calculator.netlify.app/sitemap.xml
